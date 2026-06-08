@@ -41,7 +41,7 @@ model_list:
       api_key: sk-your-key
 
 litellm_settings:
-  callbacks: ["mavvrik_focus"]
+  callbacks: ["mavvrik"]
 ```
 
 ```bash
