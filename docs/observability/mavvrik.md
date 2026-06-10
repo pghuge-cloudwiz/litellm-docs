@@ -30,6 +30,7 @@ You need the following from your Mavvrik account:
 | `MAVVRIK_CONNECTION_ID` | Yes | AI cost connection identifier |
 | `MAVVRIK_FOCUS_FREQUENCY` | No | Export cadence: `daily` (default), `hourly`, or `interval` |
 | `MAVVRIK_FOCUS_INTERVAL_SECONDS` | No | Seconds between exports when frequency is `interval` (default: 3600) |
+| `MAVVRIK_FOCUS_MAX_ROWS` | No | Maximum rows per export window (default: 500000). Increase for very high-traffic deployments. |
 
 ### Proxy config
 
@@ -61,7 +62,7 @@ Each export cycle:
 2. Requests a GCS signed upload URL for the export date (`GET /metrics/agent/ai/{connection_id}/upload-url`)
 3. Uploads gzip-compressed FOCUS CSV to GCS via the signed URL
 
-Re-running an export for the same date overwrites the previous file for that day.
+Re-running an export for the same date overwrites the previous file for that day. Exports are capped at `MAVVRIK_FOCUS_MAX_ROWS` rows per window (default 500k) to bound memory usage.
 
 ## FOCUS Field Mapping
 
