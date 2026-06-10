@@ -737,6 +737,7 @@ router_settings:
 | MAVVRIK_CONNECTION_ID | AI cost connection ID for the Mavvrik FOCUS export.
 | MAVVRIK_FOCUS_FREQUENCY | Export cadence for Mavvrik FOCUS — `daily` (default), `hourly`, or `interval`.
 | MAVVRIK_FOCUS_INTERVAL_SECONDS | Seconds between exports when `MAVVRIK_FOCUS_FREQUENCY` is `interval`. Default is 3600.
+| MAVVRIK_FOCUS_MAX_ROWS | Maximum rows per export window for the Mavvrik FOCUS destination. Default is 500000.
 | FUNCTION_DEFINITION_TOKEN_COUNT | Token count for function definitions. Default is 9
 | GALILEO_API_KEY | API key for Galileo Cloud (hosted). Used with the v2 spans API when `success_callback` includes `galileo`.
 | GALILEO_BASE_URL | Base URL for Galileo platform. For Galileo Cloud, use `https://api.galileo.ai`. For enterprise/self-hosted, replace `console` with `api` in your console URL.
